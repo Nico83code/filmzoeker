@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+@font-face {
+  font-family: KENYAN COFFEE WEBFONT;
+  src: url(./kenyan_coffee.otf) format("opentype");
+}
+
+.logo {
+  font-family: "KENYAN COFFEE WEBFONT", Kenyan-Coffee;
+  font-size: 40px;
+  background-color: rgb(245, 197, 24);
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  width: max-content;
+  border-radius: 10px;
+}
+
+a,
+li,
+footer {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 10px 0px 0px 10px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  padding: 15px;
+  
+  background-color: #24252a;
+  display: flex;
+ 
+}
+.container > div {
+  margin: auto;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+input:checked + label {
+  color: #0088a9;
+}
+
+.footer {
+  padding: 15px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 97%;
+  background-color: #24252a;
+  color: white;
+  text-align: center;
+}
+
+/* .nav_links {
+  transition: all 0.3s ease 0s;
+} */
+
+/* .nav_links a:hover {
+  color: #0088a9;
+} */
