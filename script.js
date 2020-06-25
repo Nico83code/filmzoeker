@@ -1,6 +1,4 @@
-// console.log(data.Movies);
 
-const all = data.Movies;
 
 const filtered = data.Movies.filter((movie) => {
   return movie.Year >= 2014;
@@ -126,24 +124,35 @@ const navClick = navLinks.addEventListener("click", (event) => {
         newUrl.appendChild(newPoster);
         newPoster.setAttribute("src", `${movie.Poster}`);
       });
-    default:
+    case "searchbar":
       movieList.innerHTML = "";
 
-      all.forEach((movie) => {
-        const addMoviesToDom = document.createElement("li");
-        const newPoster = document.createElement("img");
-        const newUrl = document.createElement("a");
-        const movieList = document
-          .getElementById("movieList")
-          .getElementsByTagName("ul")[0];
-        movieList.appendChild(addMoviesToDom);
-        addMoviesToDom.appendChild(newUrl);
-        newUrl.setAttribute(
-          "href",
-          `https://www.imdb.com/title/${movie.imdbID}`
-        );
-        newUrl.appendChild(newPoster);
-        newPoster.setAttribute("src", `${movie.Poster}`);
+
+      const searchBar = document.getElementById("searchbar");
+
+      searchBar.addEventListener("keyup", (event) => {
+        const searchTerm = event.target.value.toLowerCase();
+        const filteredMovies = data.Movies.filter((movie) => {
+          return movie.Title.toLowerCase().includes(searchTerm);
+        });
+        movieList.innerHTML = "";
+        filteredMovies.forEach((movie) => {
+          const addMoviesToDom = document.createElement("li");
+          const newPoster = document.createElement("img");
+          const newUrl = document.createElement("a");
+          const movieList = document
+            .getElementById("movieList")
+            .getElementsByTagName("ul")[0];
+          movieList.appendChild(addMoviesToDom);
+          addMoviesToDom.appendChild(newUrl);
+          newUrl.setAttribute(
+            "href",
+            `https://www.imdb.com/title/${movie.imdbID}`
+          );
+          newUrl.appendChild(newPoster);
+          newPoster.setAttribute("src", `${movie.Poster}`);
+        });
       });
   }
 });
+
